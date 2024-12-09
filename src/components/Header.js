@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import SwitchToDarkIcon from "../images/icon-moon.svg";
-import SwitchToLightIcon from "../images/icon-sun.svg";
-import store from "../todoStore";
+import React, { useEffect } from 'react';
+import SwitchToDarkIcon from '../images/icon-moon.svg';
+import SwitchToLightIcon from '../images/icon-sun.svg';
+import store from '../todoStore';
 // import { toggleDarkMode } from "../actions";
-import { toggleDarkMode } from "../slices/preferencesSlice";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-
+import { toggleDarkMode } from '../slices/preferencesSlice';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+//test-header
 
 const Header = () => {
-  const isDarkMode = useSelector(state => state.preferencesReducer.isDarkMode);
+  const isDarkMode = useSelector((state) => state.preferencesReducer.isDarkMode);
 
   const dispatch = useDispatch();
-  
+
   const getThemeIcon = (isDarkMode) => {
     return isDarkMode ? SwitchToLightIcon : SwitchToDarkIcon;
-  }
+  };
   let themeIcon = getThemeIcon(isDarkMode);
 
   const changeTheme = () => {
